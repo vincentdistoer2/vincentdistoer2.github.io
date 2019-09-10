@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "chromebook777 Productions",
-    "currentPage": "down.html",
+    "currentPage": "index.html",
     "theme": {
       "name": "mobirise4",
       "title": "Mobirise 4",
@@ -2626,7 +2626,7 @@
         }
       ]
     },
-    "down.html": {
+    "index.html": {
       "settings": {
         "main": true,
         "title": "chromebook777 Productions",
