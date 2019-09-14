@@ -3376,11 +3376,11 @@
           "_isUserblock": true,
           "_sourceTheme": "mobirise4",
           "_cid": "rBCcJ7BWyZ",
+          "_anchor": "footer7-9",
           "_protectedParams": [],
           "_global": true,
           "_once": "footers",
-          "_params": {},
-          "_anchor": "footer7-9"
+          "_params": {}
         },
         {
           "alias": false,
@@ -3802,11 +3802,11 @@
           "_isUserblock": true,
           "_sourceTheme": "mobirise4",
           "_cid": "rBCgPknPaQ",
+          "_anchor": "menu1-a",
           "_protectedParams": [],
           "_global": true,
           "_once": "menu",
-          "_params": {},
-          "_anchor": "menu1-a"
+          "_params": {}
         }
       ]
     }
