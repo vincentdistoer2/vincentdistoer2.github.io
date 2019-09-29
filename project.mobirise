@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "Site-09-10_2025",
-    "currentPage": "error1.html",
+    "currentPage": "index.html",
     "theme": {
       "name": "mobirise4",
       "title": "Mobirise 4",
@@ -36,7 +36,7 @@
     "screenshot": "screenshot.png"
   },
   "pages": {
-    "error1.html": {
+    "index.html": {
       "settings": {
         "main": true,
         "title": "Website Under Update",
