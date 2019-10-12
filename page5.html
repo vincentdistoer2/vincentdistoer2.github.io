@@ -72,7 +72,7 @@
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/k">develop free website</a></section><section class="header11 cid-rEGXYxA4Ty mbr-fullscreen" id="header11-h">
+<section class="engine"><a href="https://mobirise.info/r">bootstrap templates</a></section><section class="header11 cid-rEGXYxA4Ty mbr-fullscreen" id="header11-h">
 
     <!-- Block parameters controls (Blue "Gear" panel) -->
     
@@ -97,144 +97,7 @@
 
 <section once="footers" class="cid-rEGXYyvT54 mbr-reveal" id="footer7-j">
 
-    <style>
-body {
-    background-color: transparent;
-}
-canvas {
-    width: 100%;
-}
-</style>
-
-<!-- <div id="percentbarOuter">
-    <div id="percentbarInnerText">Detecting the online bots...</div>
-    <div id="percentbarInner">
-    </div>
-</div> -->
-<canvas id="circularPercentBar" width="20" height="10">
-    Unfortunately your browser doesn't support canvases. You need to get a better browser/computer to fully experience this status page.
-</canvas>
-
-<script>
-let searchForMembers = [
-    "499262934715727872", // Chromebot
-    "555361766947815424", // Chromebot Canary
-    "613545011811844137", // Chromebot Coffee Maker
-    "599743179608293398", // Chromebot manager
-    //"317731855317336067", // Minion3665 (Used for testing)
-]
-let found = false;
-let requiredAngle = 0.05;
-let lineRadius = 75;
-let lineWidth = 15;
-let botonlinecanvas = document.getElementById("circularPercentBar");
-let botonlinecontext = botonlinecanvas.getContext("2d");
-let pbDiscordWidget = new XMLHttpRequest();
-pbDiscordWidget.onreadystatechange = () => {
-    console.log(pbDiscordWidget.readyState == 4)
-    console.log(pbDiscordWidget.status == 200)
-    if (pbDiscordWidget.readyState == 4 && pbDiscordWidget.status == 200) {
-        found = true;
-        let onlineMembers = 0;
-		JSON.parse(pbDiscordWidget.responseText).members.forEach((member) => {
-		    if (searchForMembers.indexOf(member.id) >= 0) {
-		        onlineMembers++;
-			}
-            requiredAngle = (onlineMembers / searchForMembers.length) * 100;
-		});
-	}
-};
-let currentEndAngle = 0;
-// https://stackoverflow.com/questions/6517999/how-to-justify-align-text-in-html5-canvas#6518081
-function printAtWordWrap(context, text, x, y, lineHeight, fitWidth) {
-    fitWidth = fitWidth || 0;
-    lineHeight = lineHeight || 20;
-    var currentLine = 0;
-    var lines = text.split("\n");
-    for (var line = 0; line < lines.length; line++) {
-        if (fitWidth <= 0) {
-            context.fillText(lines[line], x, y + (lineHeight * currentLine));
-        } else {
-            var words = lines[line].split(' ');
-            var idx = 1;
-            while (words.length > 0 && idx <= words.length) {
-                var str = words.slice(0, idx).join(' ');
-                var w = context.measureText(str).width;
-                if (w > fitWidth) {
-                    if (idx == 1) {
-                        idx = 2;
-                    }
-                    context.fillText(words.slice(0, idx - 1).join(' '), x, y + (lineHeight * currentLine));
-                    currentLine++;
-                    words = words.splice(idx - 1);
-                    idx = 1;
-                } else {
-                    idx++;
-                }
-            }
-            if (idx > 0) {
-                context.fillText(words.join(' '), x, y + (lineHeight * currentLine));
-            }
-        }
-        currentLine++;
-    }
-}
-function colorFromGradient (color1, color2, percentage) {
-    var fraction = percentage/100;
-    var weight = fraction * 2 - 1;
-    var weight1 = (weight/1+1) / 2;
-    var weight2 = 1 - weight1;
-    return [Math.round(color1[0] * weight1 + color2[0] * weight2), Math.round(color1[1] * weight1 + color2[1] * weight2), Math.round(color1[2] * weight1 + color2[2] * weight2)];
-}
-function redraw() {
-    if (!(currentEndAngle - requiredAngle < 0.05 && currentEndAngle - requiredAngle > -0.005)) {
-        currentEndAngle = currentEndAngle + ((requiredAngle - currentEndAngle)/5);
-    }
-    let endAngle;
-    while (currentEndAngle > 100) {
-        currentEndAngle = currentEndAngle - 100
-    }
-    if (currentEndAngle >= 25) {
-        endAngle = currentEndAngle - 25;
-    } else {
-        endAngle = currentEndAngle + 75;
-    }
-    // clear the previous stuff
-    botonlinecontext.clearRect(0, 0, botonlinecanvas.width, botonlinecanvas.height);
-
-    // fill the inside
-    botonlinecontext.beginPath();
-    botonlinecontext.arc(lineRadius + lineWidth / 2, botonlinecanvas.height / 2, lineRadius, 0, Math.PI * 2, false);
-    botonlinecontext.lineWidth = lineWidth;
-    color = colorFromGradient([194, 59, 59], [194, 59, 59], currentEndAngle)
-    botonlinecontext.strokeStyle = "rgb(" + color[0].toString() + ", " + color[1].toString() + ", " + color[2].toString() + ")";
-    botonlinecontext.stroke();
     
-    botonlinecontext.beginPath();
-    botonlinecontext.arc(lineRadius + lineWidth / 2, botonlinecanvas.height / 2, lineRadius, 75 * Math.PI / 50, endAngle * Math.PI / 50, false);
-    botonlinecontext.lineWidth = lineWidth;
-    botonlinecontext.strokeStyle = "#6cb83a";
-    botonlinecontext.stroke();
-
-    botonlinecontext.lineWidth = "1";
-    var gradient = botonlinecontext.createLinearGradient(0, 0, botonlinecanvas.width, 0);
-    botonlinecontext.font = "20px Verdana";
-    botonlinecontext.textAlign = "start"; 
-    botonlinecontext.fillStyle = "white";
-    if (found) {
-        printAtWordWrap(botonlinecontext, " \n"+Math.round(currentEndAngle).toString()+"%\nonline", 2 * (lineRadius + lineWidth) + 10, botonlinecanvas.height / 2 - 30, 20, (2*lineRadius)-lineWidth);
-    } else {
-        printAtWordWrap(botonlinecontext, "Finding bots\nWhich are\nOnline", 2 * (lineRadius + lineWidth) + 10, botonlinecanvas.height / 2 - 30, 20, (2*lineRadius)-lineWidth);
-    }
-}
-function send() {
-    pbDiscordWidget.open("GET", "https://discordapp.com/api/guilds/480959345601937410/widget.json?timestamp=" + new Date().getTime(), true); //we append the current timestamp to bypass caching, it's hacky but it works. Please don't remove it unless you have a better solution.
-    pbDiscordWidget.send();
-}
-send()
-setInterval(redraw, 50);
-setInterval(send, 5000);
-</script>
 
     
 
