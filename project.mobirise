@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "chromebook777 Productions",
-    "currentPage": "page5.html",
+    "currentPage": "status.html",
     "theme": {
       "name": "mobirise4",
       "title": "Mobirise 4",
@@ -3182,7 +3182,7 @@
         }
       ]
     },
-    "page5.html": {
+    "status.html": {
       "settings": {
         "meta_descr": "",
         "title": "Status Page | chromebook777 Productions",
